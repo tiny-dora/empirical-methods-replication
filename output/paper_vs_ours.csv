@@ -1,0 +1,33 @@
+"table","column","paper_coef","our_coef","paper_se","our_se","paper_n","our_n","first_stage_F","diff_coef"
+"Table 7, Israel unjust (OLS)",1,0.118,0.118,0.018,0.018,2438,2438,NA,0
+"Table 7, Israel unjust (OLS)",2,0.139,0.139,0.0188,0.0188,2438,2438,NA,0
+"Table 7, Israel unjust (OLS)",3,0.144,0.144,0.0189,0.0189,2438,2438,NA,0
+"Table 7, Israel unjust (OLS)",4,0.15,0.15,0.0196,0.0196,2378,2378,NA,0
+"Table 7, Israel unjust (OLS)",5,0.149,0.149,0.0197,0.0197,2330,2330,NA,0
+"Table 7, Israel unjust (OLS)",6,0.159,0.159,0.0201,0.0201,2321,2321,NA,0
+"Table 7, Israel unjust (OLS)",7,0.162,0.162,0.0204,0.0204,2309,2309,NA,0
+"Table 7, Israeli policy (OLS)",1,0.389,0.389,0.0204,0.0204,2470,2470,NA,0
+"Table 7, Israeli policy (OLS)",2,0.396,0.396,0.0212,0.0212,2470,2470,NA,0
+"Table 7, Israeli policy (OLS)",3,0.398,0.398,0.0213,0.0213,2470,2470,NA,0
+"Table 7, Israeli policy (OLS)",4,0.389,0.389,0.0218,0.0218,2410,2410,NA,0
+"Table 7, Israeli policy (OLS)",5,0.386,0.386,0.022,0.022,2359,2359,NA,0
+"Table 7, Israeli policy (OLS)",6,0.384,0.384,0.0224,0.0224,2349,2349,NA,0
+"Table 7, Israeli policy (OLS)",7,0.376,0.376,0.0226,0.0226,2336,2336,NA,0
+"Table 9, first stage (born 1930-45)",1,0.519,0.519,0.118,0.1176,NA,2585,NA,0
+"Table 9, reduced form (Israel unjust)",1,0.337,0.337,0.0988,0.0988,NA,2531,NA,0
+"Table 10, Israel unjust (IV)",1,0.489,0.489,0.111,0.1105,NA,2438,71.88,0
+"Table 10, Israel unjust (IV)",2,0.589,0.589,0.227,0.2275,NA,2438,17.91,0
+"Table 10, Israel unjust (IV)",3,0.83,0.83,0.33,0.3298,NA,2438,10.96,0
+"Table 10, Israel unjust (IV)",4,0.85,0.85,0.339,0.3393,NA,2438,10.55,0
+"Table 10, Israel unjust (IV)",5,0.914,0.914,0.358,0.3578,NA,2378,10.38,0
+"Table 10, Israel unjust (IV)",6,0.854,0.854,0.363,0.3633,NA,2330,9.42,0
+"Table 10, Israel unjust (IV)",7,0.934,0.934,0.382,0.3822,NA,2321,9.22,0
+"Table 10, Israel unjust (IV)",8,0.981,0.981,0.401,0.4011,NA,2309,8.85,0
+"Table 10, Israeli policy (IV)",1,1.12,1.12,0.136,0.1361,NA,2470,74.09,0
+"Table 10, Israeli policy (IV)",2,1.204,1.204,0.286,0.2861,NA,2470,18.11,0
+"Table 10, Israeli policy (IV)",3,1.434,1.434,0.414,0.4143,NA,2470,11.11,0
+"Table 10, Israeli policy (IV)",4,1.409,1.409,0.413,0.4128,NA,2470,10.85,0
+"Table 10, Israeli policy (IV)",5,1.41,1.41,0.431,0.4306,NA,2410,10.23,0
+"Table 10, Israeli policy (IV)",6,1.405,1.405,0.45,0.4501,NA,2359,9.31,0
+"Table 10, Israeli policy (IV)",7,1.466,1.466,0.471,0.471,NA,2349,9.18,0
+"Table 10, Israeli policy (IV)",8,1.528,1.528,0.513,0.5132,NA,2336,8.32,0

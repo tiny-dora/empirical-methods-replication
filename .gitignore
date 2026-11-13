@@ -3,3 +3,12 @@ data/raw/ZA5252_v1-0-0.dta
 data/raw/jeea_15km.dta
 data/raw/jeea_20km.dta
 data/raw/jeea_25km.dta
+
+# Cleaned ALLBUS data (GESIS microdata, recreated by code/01_clean_allbus.R)
+data/processed/*
+!data/processed/.gitkeep
+
+# R / RStudio
+.Rhistory
+.RData
+.Rproj.user/
