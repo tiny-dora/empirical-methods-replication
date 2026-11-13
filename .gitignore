@@ -1,2 +1,5 @@
 .DS_Store
 data/raw/ZA5252_v1-0-0.dta
+data/raw/jeea_15km.dta
+data/raw/jeea_20km.dta
+data/raw/jeea_25km.dta
