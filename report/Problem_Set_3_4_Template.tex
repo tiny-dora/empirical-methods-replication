@@ -1,0 +1,361 @@
+% ---------------------------------------------------------------------------
+% Problem Set 3: Replication Report Empirical Methods
+% The grey instructions are produced by \instr{...}. To hide all of them at once (e.g. to check the length of your report), change \showinstrtrue to \showinstrfalse below. Please remove them before you submit.
+% ---------------------------------------------------------------------------
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{microtype}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage[font=small,labelfont=bf,skip=6pt]{caption}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{booktabs}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+% --- Instructions ----------------------------------------------------------
+\newif\ifshowinstr
+\showinstrtrue
+%\showinstrfalse
+\newcommand{\instr}[1]{\ifshowinstr{\leavevmode\color{gray}\itshape\small [#1]\par}\fi}
+
+% --- Helpers for the worksheets --------------------------------------------
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcommand{\fillrow}{\rule[-0.35cm]{0pt}{0.85cm}}  % leaves room to write in a row
+\newcommand{\rowline}{\arrayrulecolor{black!25}\hline\arrayrulecolor{black}}
+\renewcommand{\arraystretch}{1.25}
+
+% --- Table notes -----------------------------------------------------------
+\newcommand{\tablenotes}[1]{\par\vspace{4pt}{\footnotesize\textit{Notes:} #1\par}}
+
+\title{Replication of [Author(s) (Year)]:\\{} [Title of the Paper]}
+\author{[Your Name 1], [Your Name 2], [Your Name 3], [Your Name 4]}
+
+\begin{document}
+\maketitle
+
+\instr{The grey italic passages provide you with some short instructions. Please delete these passages before you submit by setting \texttt{\textbackslash showinstrfalse} in the preamble. \textbf{The report should be 5 to 7 pages long.} This includes tables and figures but excludes any references and Appendix A. \textbf{Appendix A} tries to guide you through some of the replication exercises. It \textbf{has to be filled in and submitted together with the report}. Appendix~B is only meant as a help for you, and you can delete it before submitting.}
+
+% ===========================================================================
+\section{Introduction}
+% ===========================================================================
+
+\instr{In this paragraph, you should introduce the paper and its results, as well as your evaluation and extension. Worksheet~A.1 helps you collect the key facts about the paper.}
+
+% Your text
+
+% ===========================================================================
+\section{Data and Methodology}
+% ===========================================================================
+
+\subsection{Data}
+
+\instr{Worksheet~A.2 should help you understand which data you need and which adjustments you will have to make for the replication.}
+
+% Your text
+
+\subsection{Empirical strategy}
+
+\instr{Think about what you need to explain the identification strategy of the authors and why they believe that it is valid. Appendix~B.1 summarizes the main points for OLS, panel data and IV designs. You can use these as a reference.}
+
+% Your text. Example of a numbered equation that you can refer to with
+% equation~\eqref{eq:main}:
+%
+% \begin{equation}\label{eq:main}
+%   Y_{it} = \alpha_i + \lambda_t + \beta X_{it} + \gamma' W_{it} + \varepsilon_{it}
+% \end{equation}
+
+% ===========================================================================
+\section{Main Result}
+% ===========================================================================
+
+\subsection{Replication}
+
+\instr{This part should include your main replication table (Table~\ref{tab:main}) and figure(s) (at least Figure~\ref{fig:main}). Replicate at least what you consider the main column of the main results table, as well as one or two figures that visualize the result. Do your results differ? Worksheet~A.3 helps you think about why they might differ. It is fine if you cannot replicate a number exactly, as long as you understand why.}
+
+% Your text
+
+\begin{table}[htbp]
+  \centering
+  \caption{[Title]}
+  \label{tab:main}
+  % Replace the placeholder with your table, e.g. \input{tables/main.tex}
+  [Insert table here]
+
+  \tablenotes{[What is estimated and on which sample; what each column shows;
+  how standard errors are computed, e.g.\ clustered at the \dots\ level, in
+  parentheses; significance levels.]}
+\end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \caption{[Title]}
+  \label{fig:main}
+  % Replace the placeholder with your figure, e.g.
+  % \includegraphics[width=0.85\textwidth]{figures/figure1.pdf}
+  [Insert figure here]
+
+  \tablenotes{[Which figure of the paper is replicated and what is plotted.]}
+\end{figure}
+
+\subsection{Interpretation}
+
+\instr{Appendix~B.2 shows how to read and interpret coefficients.}
+
+% Your text
+
+% ===========================================================================
+\section{Critical Evaluation}
+% ===========================================================================
+
+\subsection{Threats to internal validity}
+
+\instr{Focus on the threat(s) to internal validity you consider most important. You can prepare this section with Worksheet~A.4 and Appendix~B.1.}
+
+% Your text
+
+\subsection{Overall assessment}
+
+\instr{What do you think about the overall validity of the paper? Three or four sentences are enough.}
+
+% Your text
+
+% ===========================================================================
+\section{Extension and Robustness}
+% ===========================================================================
+
+\subsection{Extension}
+
+\instr{This part should include your extension. Test whether the main conclusion continues to hold when you change something the authors did not change. Discuss the extension in theory (as above briefly describe your empirical strategy and assumptions) and show us your main result.}
+
+% Your text
+
+\begin{table}[htbp]
+  \centering
+  \caption{[Title]}
+  \label{tab:ext}
+  [Insert table here]
+
+  \tablenotes{[What is estimated in each column; standard errors; significance
+  levels.]}
+\end{table}
+
+\subsection{Ideal empirical strategy}
+
+\instr{Please describe the best empirical design you could implement if there were no restrictions on data availability (or on money and ethics, in the case of an experiment).}
+
+% Your text
+
+% ===========================================================================
+\section{Conclusion}
+% ===========================================================================
+
+% Your text
+
+% ===========================================================================
+\begin{thebibliography}{0}
+% ===========================================================================
+% You can also use a differnt bibliography (e.g., the biblatex package). Importantly, list every literature and data you use. Use one citation style consistently. Example:
+\bibitem{paper} [Author, A., \& Author, B. (Year). Title of the article.
+\textit{Journal} Volume(Issue), pages.]
+\end{thebibliography}
+
+% ===========================================================================
+\clearpage
+\appendix
+\section{Replication Worksheets}
+% ===========================================================================
+
+\instr{Please fill in these worksheets and submit them together with your report. Keywords are sufficient. The worksheets do not count toward the page limit. Add rows or columns where your paper requires it.}
+
+\subsection{The paper at a glance}
+
+
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.36\textwidth}L@{}}
+\toprule
+Field & Your entry \\
+\midrule
+Paper & [Author(s) (year), ``Title,'' \textit{Journal}, volume(issue), pages. DOI] \\
+Replication package & [Link to the replication package on, e.g., Zenodo, Harvard Dataverse] \\
+Additional data sources & [Link and access date to any additional data sources] \\
+Outcome ($Y$) & \\
+Treatment or variable of interest ($X$) & \\
+Unit of observation & [e.g.\ worker, firm, county-year] \\
+Setting and period & [country or market, sample years] \\
+Comparison & [who is compared with whom] \\
+Main method & [OLS / panel methods / IV-2SLS / combination] \\
+Result replicated & [e.g.\ Table 2, column 3; Figures 1 and 3] \\
+Software and version & [e.g.\ R 4.4, Stata 18, Python 3.12] \\
+Code & [Repository link or name of the code folder] \\
+\bottomrule
+\end{tabularx}}
+
+\subsection{Key variables}
+
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}p{0.25\textwidth}
+  >{\raggedright\arraybackslash}p{0.16\textwidth}
+  L@{}}
+\toprule
+Role & Name in paper & Name in dataset & Definition and unit \\
+\midrule
+Outcome ($Y$) & & & \\
+Variable of interest ($X$) & & & \\
+Instrument ($Z$), if IV & & & \\
+Main controls ($W$) & & & \\
+\bottomrule
+\end{tabularx}}
+
+\medskip\noindent
+Sample: [N] observations, [number] units, [number] periods.
+
+\subsection{Reconciling differences}
+
+Importantly, here you do not have to check everything. In the main text, please explain where you believe the difference between your results is coming from based on the suggestions.
+
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.45\textwidth}L>{\raggedright\arraybackslash}p{0.15\textwidth}@{}}
+\toprule
+Possible source & What we checked & Effect on $\beta$ \\
+\midrule
+Data version & & \\
+Sample restrictions and missing values & & \\
+Construction of variables (definitions, deflators, logs of zero) & & \\
+Sample weights & & \\
+Fixed effects and dropped singletons & & \\
+Standard errors (clustering, small-sample corrections) & & \\
+Software defaults (Stata, R, Python) & & \\
+Other (specify) & & \\
+\bottomrule
+\end{tabularx}}
+
+\subsection{Threats to internal validity}
+
+Importantly, also here you do not have to check everything but what you consider to be most important.
+
+{\renewcommand{\arraystretch}{1.4}%
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}
+  L
+  >{\raggedright\arraybackslash}p{0.13\textwidth}
+  L
+  >{\raggedright\arraybackslash}p{0.14\textwidth}@{}}
+\toprule
+Threat & Potential mechanism in this paper & Direction of bias & Addressed by the authors & Convincing? \\
+\midrule
+Omitted variable(s) & & & & \\
+Reverse causality & & & & \\
+Measurement error & & & & \\
+Sample selection & & & & \\
+Other (specify) & & & & \\
+\bottomrule
+\end{tabularx}}
+
+\subsection{Reproducibility checklist}
+
+\begin{itemize}[label=$\square$, leftmargin=*, itemsep=2pt]
+  \item A README file describes the folder structure, the software and package versions, and the order in which the scripts are run.
+  \item One master script runs the whole analysis, starting from the raw data.
+  \item The raw data are not modified; all cleaning is done in code.
+  \item The code only uses relative file paths.
+  \item Every table and figure in the report is produced by a script.
+  \item Random seeds are set wherever results depend on simulation or bootstrapping.
+\end{itemize}
+
+\textit{Use of AI tools (optional).} [Two or three sentences on how you used AI
+tools.]
+
+% ===========================================================================
+\clearpage
+\section{Notes on Methods}
+% ===========================================================================
+
+\instr{Delete this appendix before submitting.}
+
+\subsection{Guide to evaluate identification methods}
+
+
+\paragraph{Step 1: What is the model?}
+Write the authors' main specification in one of the forms we used in class:
+\begin{align*}
+  \text{OLS:} \quad & y_i = x_i'\beta + \varepsilon_i = \beta_1 + \beta_2 x_{i2} + \dots + \beta_K x_{iK} + \varepsilon_i . \\
+  \text{Panel data:} \quad & y_{it} = x_{it}'\beta + \alpha_i + d_t + \varepsilon_{it} \\
+  \text{IV:} \quad & y_i = x_{1i}'\beta_1 + x_{2i}'\beta_2 + \varepsilon_i,
+     \quad \text{with instruments } z_i' = [z_{1i}' \;\; x_{2i}']
+\end{align*}
+Which variable $x_{ik}$ is the variable of interest? Which variables are controls? If you use panel methods, what exactly is in $\alpha_i$ and $d_t$ in your paper? For IV, which variables are in $x_{1i}$ and which in $z_{1i}$?
+ 
+\paragraph{Step 2: Which comparison identifies $\beta$?}
+What do the authors compare to identify $\beta$. Is it a comparison across units, within the same unit over time, or between units that are affected differently by an instrument? Once $\alpha_i$ and $d_t$ are taken out, or once only the variation in $x_{1i}$ that comes from $z_{1i}$ is used, what variation is left?
+ 
+\paragraph{Step 3: Which assumption allows a causal interpretation of $\hat{\beta}$?}
+Think about the material covered in class. Which of the main assumptions have to be fulfilled to allow for a causal interpretation. For OLS we made five assumptions: linearity, mean-zero error, homoskedasticity, no serial correlation, and normal errors. Both panel data methods and IV make some additional assumptions or replace some of the assumptions with their own version. For panel data methods, we have seen that the estimators differ in what they assume about $Cov(x_{is}, \varepsilon_{it})$ and $Cov(x_{it}, \alpha_i)$. What does the estimator in your paper need? For IV, we discussed exogeneity and relevance. What do they imply and how do the authors make sure that they are fulfilled? 
+ 
+\paragraph{Step 4: Is the assumption plausible?}
+This should be the core of your evaluation of the paper. Some questions to guide you:
+\begin{itemize}[leftmargin=*, itemsep=2pt]
+  \item In general: We discussed three threats to the internal validity of OLS. Ask yourself: Could $y_i$ also affect the variable of interest? Is there a third variable that drives both? Is the variable of interest measured with error?
+  \item In panel data: Which of these problems can fixed effects account for and which not? Could the outcome in one  period affect the explanatory variables in a later period?
+  \item For IV: Why should the instrument move $x_{1i}$? Can you think of any channel through which it might affect $y_i$ directly, or be related to something in $\varepsilon_i$?
+\end{itemize}
+ 
+\paragraph{Step 5: What evidence do the authors provide?}
+Which tests, robustness checks or figures do the authors use to support the assumption from Steps 3 and 4? For IV, what does the first stage show, and how large is the $F$-statistic? Does the evidence provided by the authors address the concerns you raised in Step~4, or does it test something else?
+ 
+\paragraph{Step 6: How are standard errors computed?}
+Recall what happens when (A3) or (A4) fails. Which standard errors do the authors report? Do they cluster? If so, at which level? Are the errors potentially correlated within these clusters?
+ 
+\subsection{Interpreting coefficients}
+ 
+\begin{tabularx}{\textwidth}{@{}P{0.3\textwidth}L@{}}
+\toprule
+\textbf{Specification} & \textbf{Interpretation of $\beta_k$} \\
+\midrule
+$y_i$ on $x_{ik}$ & A one-unit increase in $x_{ik}$ changes $y_i$ by $\beta_k$ units. \\
+$\log y_i$ on $x_{ik}$ & A one-unit increase in $x_{ik}$ changes $y_i$ by about $100\beta_k$ percent (exactly $100(e^{\beta_k}-1)$ percent). \\
+$y_i$ on $\log x_{ik}$ & A one percent increase in $x_{ik}$ changes $y_i$ by about $\beta_k/100$ units. \\
+$\log y_i$ on $\log x_{ik}$ & A one percent increase in $x_{ik}$ changes $y_i$ by about $\beta_k$ percent (an elasticity). \\
+Binary $y_i$ (linear probability model) & A one-unit increase in $x_{ik}$ changes the probability that $y_i = 1$ by $100\beta_k$ percentage points. \\
+\bottomrule
+\end{tabularx}
+ 
+In each case, the other explanatory variables are held constant.
+
+\subsection{Direction of omitted variable bias}
+
+As in class, suppose the true model is $y_i = x_i'\beta + \gamma w_i + \varepsilon_i$, but you estimate $y_i = x_i'\beta + \varepsilon_i$ and omit $w_i$. Then
+\[
+  E(\hat\beta_k) = \beta_k + \gamma \, \hat\beta_{w\_on\_x,k} ,
+\]
+where $\gamma$ is the effect of $w_i$ on $y_i$ and $\hat\beta_{w\_on\_x,k}$ is the coefficient on $x_{ik}$ in a regression of $w_i$ on $x_i$. In panel data, $\alpha_i$ plays the role of $w_i$ when it is ignored.
+ 
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & \textbf{$w_i$ raises $y_i$ ($\gamma > 0$)} & \textbf{$w_i$ lowers $y_i$ ($\gamma < 0$)} \\
+\midrule
+$w_i$ positively correlated with $x_{ik}$ & Upward bias & Downward bias \\
+$w_i$ negatively correlated with $x_{ik}$ & Downward bias & Upward bias \\
+\bottomrule
+\end{tabular}
+\end{center}
+ 
+Upward bias makes the estimate more positive. For a negative $\beta_k$, it therefore pulls the estimate toward zero, so always say whether the bias moves the estimate toward or away from zero.
+
+\end{document}
