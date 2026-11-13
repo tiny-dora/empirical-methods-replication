@@ -14,10 +14,16 @@
 #    other worldviews that may affect views on Israel directly?
 #    (= Table 9, third panel, all columns; do-file l. 242-245)
 #
+# C. "Plausibly exogenous" sensitivity (Conley, Hansen & Rossi 2012, REStat):
+#    allow the instrument a direct effect delta on Y and show how the estimate
+#    changes. Main specification = Table 10, column 4.
+#
 # Input : data/processed/allbus2016_clean.rds   (from 01_clean_allbus.R)
 # Output: output/tables/ext_weakiv_unjust.tex, ext_weakiv_policy.tex,
 #         output/tables/ext_exclusion.tex, output/ext_weakiv.csv,
-#         output/figures/ext_weakiv.pdf / .png
+#         output/figures/ext_weakiv.pdf / .png,
+#         output/ext_plausexog.csv, output/tables/ext_plausexog.tex,
+#         output/figures/ext_plausexog.pdf / .png
 #
 # Packages: sandwich, ivreg, ggplot2 (same as 02_tables.R)
 # =============================================================================
@@ -238,4 +244,94 @@ writeLines(c("\\begin{tabular}{lccc}", "\\toprule",
              "\\bottomrule", "\\end{tabular}"),
            "output/tables/ext_exclusion.tex")
 
-cat("\nDone. Extension tables in output/tables/ext_*.tex, figure in output/figures/ext_weakiv.*\n")
+# -----------------------------------------------------------------------------
+# C. Plausibly exogenous instrument (Conley, Hansen & Rossi 2012, "union of
+#    confidence intervals" idea), Table 10 column 4, outcome Israel unjust.
+#
+#    Exclusion restriction says: being born 1930-45 affects Y ONLY through X.
+#    Suppose instead it also has a direct effect delta (in points on the 1-7
+#    scale):     Y = beta*X + delta*Z + W'g + e
+#    For a fixed delta, subtract delta*Z from Y and run the same 2SLS:
+#       beta(delta) = (reduced form - delta) / first stage
+#    Because the first stage is small (0.388), every unit of delta moves beta
+#    by 1/0.388 = 2.6 units (weak instrument amplifies exclusion violations).
+#    delta > 0: cohort is more critical of Israel for other reasons -> IV too big
+#    delta < 0: cohort is more favourable (guilt, reparations)       -> IV too small
+# -----------------------------------------------------------------------------
+cs4 <- spec_t10(4)
+x <- "anti_jews_influence"; z <- "cohort_1930_45"; y <- "israel_unjust"
+d4 <- s[complete.cases(s[, c(y, x, z, cs4$num, cs4$fac)]), ]
+ex4 <- rhs(cs4)
+W4  <- model.matrix(as.formula(paste("~", ex4)), data = d4)
+res4 <- function(v) unname(lm.fit(W4, v)$residuals)
+xt <- res4(d4[[x]]); zt <- res4(d4[[z]])
+
+# OLS benchmark with comparable controls (Table 7, column 3: SPEC_3 + age, age^2)
+ols3 <- lm(as.formula(paste(y, "~", x, "+ age + age2 +", rhs(spec[[3]]))),
+           data = s[complete.cases(s[, c(y, x, "age", "age2", spec[[3]]$num, spec[[3]]$fac)]), ])
+b_ols <- unname(coef(ols3)[x])
+
+deltas <- round(seq(-0.30, 0.40, by = 0.01), 2)
+pe <- do.call(rbind, lapply(deltas, function(dl) {
+  d4$y_adj <- d4[[y]] - dl * d4[[z]]
+  m  <- ivreg(as.formula(paste("y_adj ~", x, "+", ex4, "|", z, "+", ex4)), data = d4)
+  b  <- unname(coef(m)[x]); se <- sqrt(vcovHC(m, type = "HC0")[x, x])
+  ar <- ar_set(res4(d4$y_adj), xt, zt)
+  data.frame(delta = dl, beta = b, se = se, ci_lo = b - 1.96 * se, ci_hi = b + 1.96 * se,
+             AR_lo = as.numeric(ar["lo"]), AR_hi = as.numeric(ar["hi"]), AR_type = ar["type"],
+             row.names = NULL)
+}))
+write.csv(pe, "output/ext_plausexog.csv", row.names = FALSE)
+
+fs4 <- res_all$first_stage[res_all$outcome == y & res_all$column == 4]
+rf4 <- res_all$reduced_form[res_all$outcome == y & res_all$column == 4]
+delta_ols  <- rf4 - b_ols * fs4                       # delta that makes IV = OLS
+delta_zero <- rf4                                     # delta that makes IV = 0
+delta_ar0  <- min(pe$delta[pe$AR_type == "bounded" & pe$AR_lo <= 0], na.rm = TRUE)  # AR CI first includes 0
+cat(sprintf("\nPlausibly exogenous (Table 10 col 4): first stage %.3f, reduced form %.3f, OLS benchmark %.3f\n",
+            fs4, rf4, b_ols))
+cat(sprintf("  delta for IV = OLS: %.2f | delta for IV = 0: %.2f | smallest delta where AR 95%% CI includes 0: %.2f\n",
+            delta_ols, delta_zero, delta_ar0))
+
+# Short table for the report
+sel <- pe[pe$delta %in% c(-0.20, -0.10, 0, 0.10, 0.20, 0.30), ]
+writeLines(c("\\begin{tabular}{lcccc}", "\\toprule",
+             "Direct effect $\\delta$ & 2SLS $\\beta(\\delta)$ & SE & 95\\% CI ($\\pm$1.96) & 95\\% CI (AR) \\\\", "\\midrule",
+             sprintf("%s & %s & (%s) & [%s, %s] & [%s, %s] \\\\", formatC(sel$delta, format = "f", digits = 2),
+                     fmt(sel$beta), fmt(sel$se), fmt(sel$ci_lo, 2), fmt(sel$ci_hi, 2), fmt(sel$AR_lo, 2), fmt(sel$AR_hi, 2)),
+             "\\midrule",
+             sprintf("\\multicolumn{5}{l}{OLS benchmark (Table 7, col.\\ 3): %s; IV = OLS at $\\delta = %s$} \\\\",
+                     fmt(b_ols), formatC(delta_ols, format = "f", digits = 2)),
+             "\\bottomrule", "\\end{tabular}"),
+           "output/tables/ext_plausexog.tex")
+
+# Figure
+pp <- ggplot(pe, aes(x = delta)) +
+  geom_ribbon(aes(ymin = ci_lo, ymax = ci_hi), fill = "#1F4E79", alpha = 0.18) +
+  geom_line(aes(y = AR_lo), colour = "#C55A11", linetype = "longdash", linewidth = 0.7) +
+  geom_line(aes(y = AR_hi), colour = "#C55A11", linetype = "longdash", linewidth = 0.7) +
+  geom_line(aes(y = beta), colour = "#1F4E79", linewidth = 1.1) +
+  geom_hline(yintercept = 0, colour = "grey40", linewidth = 0.4) +
+  geom_hline(yintercept = b_ols, colour = "grey40", linetype = "dashed", linewidth = 0.4) +
+  geom_vline(xintercept = 0, colour = "grey40", linetype = "dotted", linewidth = 0.5) +
+  geom_vline(xintercept = delta_ar0, colour = "#C55A11", linetype = "dotted", linewidth = 0.5) +
+  annotate("text", x = min(deltas), y = b_ols, label = sprintf("OLS = %.2f", b_ols),
+           hjust = 0, vjust = -0.5, size = 3.2, colour = "grey30") +
+  annotate("text", x = 0, y = 3.9, label = "Authors' assumption:\ndelta = 0  ->  IV = 0.85",
+           hjust = 1.05, vjust = 1, size = 3.2, colour = "grey20") +
+  annotate("text", x = delta_ar0, y = 3.9,
+           label = sprintf("delta = %.2f:\nAR 95%% CI\nincludes 0", delta_ar0),
+           hjust = -0.05, vjust = 1, size = 3.2, colour = "#C55A11") +
+  annotate("point", x = delta_ols, y = b_ols, size = 2.5) +
+  annotate("text", x = delta_ols, y = b_ols, label = sprintf("IV = OLS\nat delta = %.2f", delta_ols),
+           hjust = -0.1, vjust = -0.4, size = 3.2) +
+  coord_cartesian(ylim = c(-1.1, 4)) +
+  labs(x = expression(paste("Assumed direct effect ", delta, " of being born 1930-45 on 'Israel unjust' (1-7 scale)")),
+       y = "Implied effect of\n'Jews have too much influence'",
+       caption = paste("Blue line and band: 2SLS estimate (Table 10, col. 4) and 95% CI (+/- 1.96) for each delta.",
+                       "Orange dashed: 95% Anderson-Rubin CI.", sep = "\n")) +
+  theme_minimal(base_size = 11) + theme(panel.grid.minor = element_blank())
+ggsave("output/figures/ext_plausexog.pdf", pp, width = 7.5, height = 4.5)
+ggsave("output/figures/ext_plausexog.png", pp, width = 7.5, height = 4.5, dpi = 300)
+
+cat("\nDone. Extension tables in output/tables/ext_*.tex, figures in output/figures/ext_*.*\n")
