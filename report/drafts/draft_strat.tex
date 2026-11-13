@@ -1,0 +1,143 @@
+\par\textbf{Empirical Strategy}\par
+
+\par\textbf{Twitter: Panel OLS and IV with Fixed Effects}\par
+
+\begin{itemize}
+\item
+  The baseline specification (equation 1) is:\footnote{(Binstok, Gould, and Kaplan 2024, p. 2337, l. 4--12)}
+\end{itemize}
+
+\emph{Israel Negative\textsubscript{jt} = β\textsubscript{0} + β\textsubscript{1} Jews Negative\textsubscript{jt} + μ\textsubscript{j} + δ\textsubscript{t} + ε\textsubscript{jt}}
+
+\begin{itemize}
+\item
+  μ\textsubscript{j} denotes district fixed effects (355 districts); δ\textsubscript{t} denotes year, month-of-year and day-of-week fixed effects.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2337, l. 10--12)}
+\item
+  β\textsubscript{1} measures the effect of the local negative salience of Jews on negative chatter about Israel.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2337, l. 13--15)}
+\end{itemize}
+
+\begin{itemize}
+\item
+  The unit of observation is the district-day rather than the individual: only 2.5\% of users posting about Israel also post about Jews on the same day, so tweets serve as a proxy for local sentiment.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2337, l. 15--25)}
+\item
+  Identification rests on changes within districts over time, after district and calendar effects have been removed.
+\item
+  In the IV specification, negative tweets about Tottenham instrument for negative tweets about Jews.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2337, l. 25--26; p. 2340, l. 2--6)}
+
+  \begin{itemize}
+  \item
+    \textbf{Relevance:} negative tweets about Tottenham predict negative tweets about Jews (Table 2, columns 6--7)\footnote{(Binstok, Gould, and Kaplan 2024, p. 2339, l. 2--8)}, with a first-stage F-statistic of 25.83.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2340, l. 10--12; Table 3, column 1)}
+  \item
+    \textbf{Support for exclusion:} chatter about Tottenham does not predict chatter about China (placebo).\footnote{(Binstok, Gould, and Kaplan 2024, p. 2339, l. 14--24)}
+  \item
+    Chatter about Tottenham follows the timing and location of the club's matches.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2339, l. 25--35)}
+  \item
+    Alternative instruments are dummies for match windows and the locations of opposing teams.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2340, l. 19--29)}
+  \end{itemize}
+\item
+  Standard errors are robust and clustered at the district level.\footnote{(Binstok, Gould, and Kaplan 2024, notes to Tables 2 and 3)}
+\item
+  Because of the large number of zeros, the model is re-estimated at the weekly and monthly level and with Poisson fixed effects.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2342, l. 27--31; p. 2343, l. 1--7 and l. 17--22)}
+\end{itemize}
+
+\par\textbf{ALLBUS: Cross-Sectional OLS}\par
+
+\begin{itemize}
+\item
+  The outcome is regressed on the variable of interest, with controls added step by step (Table 7, columns 1--7, p. 2353).\footnote{(Binstok, Gould, and Kaplan 2024, p. 2352, l. 11--23)}
+\item
+  The authors argue that the coefficient remains stable or rises as controls are added, which makes it unlikely that omitted variables bias it away from zero.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2352, l. 34--37; p. 2354, l. 27--32)}
+
+  \begin{itemize}
+  \item
+    The same pattern holds within age, gender and education subgroups.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2355, l. 4--13)}
+  \item
+    Bounds following Oster (2019) and Krauth (2016) suggest that the true effect is larger.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2355, l. 14--19)}
+  \end{itemize}
+\item
+  The authors name three remaining threats: further omitted variables, reverse causality and measurement error, as respondents may conceal antisemitic views.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2355, l. 21--28)}
+\end{itemize}
+
+\par\textbf{ALLBUS: Instrumental Variable Design}\par
+
+\begin{itemize}
+\item
+  The structural equation underlying Table 10 can be written as:
+\end{itemize}
+
+\emph{Israel Unjust\textsubscript{i} = β Jews Influence\textsubscript{i} + δ Born1930--60\textsubscript{i} + γ′W\textsubscript{i} + ε\textsubscript{i}}
+
+\begin{itemize}
+\item
+  The corresponding first stage is:
+\end{itemize}
+
+\emph{Jews Influence\textsubscript{i} = π Born1930--45\textsubscript{i} + δ Born1930--60\textsubscript{i} + γ′W\textsubscript{i} + u\textsubscript{i}}
+
+\begin{itemize}
+\item
+  The underlying idea is that children who grew up under Nazi rule (1933--1945) were indoctrinated against Jews and that this effect persisted throughout their lives.\footnote{(Binstok, Gould, and Kaplan 2024, pp. 2355--2356, l. 29--36 and l. 2--3)}
+
+  \begin{itemize}
+  \item
+    Figure 7 shows that respondents born in the 1930s and 1940s are more likely to agree that Jews have too much influence.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 4--7)}
+  \item
+    As the State of Israel did not exist at that time, the indoctrination was directed against Jews and not against Israel.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 11--12)}
+  \end{itemize}
+\item
+  Identification compares respondents born 1930--1945 with those born 1946--1960, holding the broad cohort (before or after 1960) constant.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2358, l. 1--6)}
+\item
+  The endogenous variable is ``Jews have too much influence''; the instrument is the indicator for being born 1930--1945.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2358, l. 34--37)}
+\item
+  Controls are added column by column (Table 10, columns 1--8, p. 2359), and standard errors are robust.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2360, l. 7--16)}
+\end{itemize}
+
+\par\textbf{Identifying Assumptions}\par
+
+\begin{itemize}
+\item
+  \textbf{Relevance:} the instrument must shift antisemitic views.
+
+  \begin{itemize}
+  \item
+    With a linear age control, the 1930--1945 cohort is significant but, in the authors' words, ``not strong enough''.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 7--9 and l. 17--20)}
+  \item
+    The first stage becomes considerably stronger when the indicator for being born before 1960 is used instead; this version is used for the main IV (Table 9, third panel: 0.519, standard error 0.118).\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 20--21; p. 2358, l. 1--7)}
+  \end{itemize}
+\item
+  \textbf{Exogeneity and exclusion restriction:} being born 1930--1945 rather than 1946--1960 affects views on Israel only through antisemitism.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2358, l. 10--15)}
+
+  \begin{itemize}
+  \item
+    The authors argue that the year of birth is ``exogenously determined''.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 15--16)}
+  \item
+    They acknowledge that cohorts differ in politics, religion, nationalism and attitudes towards Islam and foreigners, which may affect views on Israel directly.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2358, l. 19--31)}
+  \end{itemize}
+\item
+  \textbf{Linearity and homogeneous effects:} the model implies one coefficient per step on the seven-point scale. The paper does not discuss this assumption explicitly, so it is a point for the evaluation.
+\item
+  \textbf{Twitter IV:} chatter about Tottenham affects chatter about Israel only through the salience of Jews, and Tottenham is not associated with Israel.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2333, l. 1--8; p. 2339, l. 20--24)}
+\end{itemize}
+
+\par\textbf{The Authors' Defence of the Assumptions}\par
+
+\begin{itemize}
+\item
+  The indicator for being born before 1960 allows for a broad direct effect of age; its coefficient is insignificant.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2358, l. 12--15; p. 2360, l. 1--6)}
+\item
+  The more restrictive specification without any age control (column 1) yields the smallest estimate, so a violation of this assumption would, if anything, bias the estimate towards zero.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2360, l. 1--3; fn. 23, pp. 2360--2361, l. 42--44 and l. 41--43)}
+\item
+  Adding worldview controls that are correlated with age increases the estimate.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2360, l. 17--33)}
+
+  \begin{itemize}
+  \item
+    The argument follows the logic of coefficient stability used by Alesina, Giuliano and Nunn (2013) and Autor, Dorn and Hanson (2013).\footnote{(Binstok, Gould, and Kaplan 2024, p. 2360, l. 30--32)}
+  \end{itemize}
+\item
+  Excluding respondents born 1940--1945 barely changes the result (0.90 instead of 0.85).\footnote{(Binstok, Gould, and Kaplan 2024, fn. 21, p. 2360, l. 36--39)}
+\item
+  Alternative instrument 1: year of birth (linear), estimated separately within the cohorts born before and after 1960 (Table 12).\footnote{(Binstok, Gould, and Kaplan 2024, p. 2361, l. 33--40; p. 2363, l. 33--41)}
+\item
+  Alternative instrument 2: an interviewer aged 75 or older, with whom respondents are assumed to be more open, yields similar results, but the first-stage F-statistic is only about 5.\footnote{(Binstok, Gould, and Kaplan 2024, pp. 2364--2365, l. 36--44 and l. 1--6)}
+\end{itemize}
+

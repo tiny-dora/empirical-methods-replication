@@ -17,3 +17,10 @@ if (length(missing)) stop("Please install first: install.packages(c(\"",
 source("code/01_clean_allbus.R", echo = FALSE)   # raw .dta -> data/processed/
 source("code/02_tables.R",       echo = FALSE)   # replication: Tables 6, 7, 9, 10, Figure 7
 source("code/03_extension.R",    echo = FALSE)   # extension: weak-IV inference, exclusion check
+
+# Copy tables and figures into the report folder (for Overleaf / report/main.tex)
+dir.create("report/tables", showWarnings = FALSE, recursive = TRUE)
+dir.create("report/figures", showWarnings = FALSE, recursive = TRUE)
+file.copy(list.files("output/tables", pattern = "\\.tex$", full.names = TRUE), "report/tables", overwrite = TRUE)
+file.copy(list.files("output/figures", pattern = "\\.pdf$", full.names = TRUE), "report/figures", overwrite = TRUE)
+cat("Tables and figures copied to report/tables and report/figures.\n")

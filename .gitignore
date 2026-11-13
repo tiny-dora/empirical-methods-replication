@@ -12,3 +12,14 @@ data/processed/*
 .Rhistory
 .RData
 .Rproj.user/
+
+# LaTeX build files (Overleaf builds the PDF)
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.synctex.gz
+report/*.fdb_latexmk
+report/*.fls
+report/comment.cut
+report/main.pdf

@@ -1,0 +1,67 @@
+\par\textbf{Focus of the Replication}\par
+
+This chapter explains why the replication concentrates on Tables 6, 7, 9 and 10 and on Figure 7 of the paper. Together these elements contain the complete argument of the ALLBUS analysis, from the data to the main causal estimate, and they can be reproduced within the scope of the problem set.
+
+\par\textbf{Requirements of the Problem Set}\par
+
+\begin{itemize}
+\item
+  The problem set asks for at least the main column of the main results table and one or two figures that visualise the result.\footnote{(Problem Set 3, report template, Section 3.1 (Replication))}
+\item
+  The report is limited to five to seven pages including tables and figures, so the replication has to concentrate on the elements that carry the argument.
+\item
+  Differences between the replicated and the original results must be explained (Worksheet A.3), and the identification must be evaluated (Appendix B.1, Steps 1--6). The selection therefore also has to cover the evidence needed for this evaluation.
+\end{itemize}
+
+\par\textbf{Selected Tables and Figure}\par
+
+Table 1 lists the selected elements, their role in the paper's argument and the result of the replication.
+
+\emph{[Tabelle des Kollegen hier entfernt -- die echten Zahlen stehen jetzt in Table~\ref{tab:main} und Figure~\ref{fig:main}.]}
+
+\par\textbf{Reasons for the Selection}\par
+
+\begin{itemize}
+\item
+  \textbf{Table 10 (column 4) is the paper's main result.} It is the specification the authors interpret and repeat in Table 11, and it is the only ALLBUS estimate with a causal interpretation.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2362, l. 12--13)} Columns 1, 2 and 8 show how the estimate changes with the set of controls, which is itself part of the authors' argument.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2360, l. 17--33)}
+\item
+  \textbf{Table 7 provides the OLS benchmark.} Two central claims rest on it: the IV estimate is several times larger than OLS, and the OLS coefficient remains stable as controls are added.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2352, l. 34--37; p. 2364, l. 27--35)} Without OLS, neither the measurement-error argument nor its critique can be assessed.
+\item
+  \textbf{Table 9 (third panel) is the first stage.} The relevance of the instrument can only be judged with the first-stage coefficient and its F-statistic, which the evaluation guide explicitly asks for (Step 5). The authors themselves switch to the indicator for being born before 1960 because the first stage with linear age is too weak.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 17--21)}
+\item
+  \textbf{Table 6 validates the data.} Matching the sample size of 2,336 and the means of all variables confirms that the sample restrictions, the recoding of the attitude items and the treatment of missing values are correct. Every later estimate depends on these steps, so a mismatch here would explain any later difference.
+\item
+  \textbf{Figure 7 makes the identification visible.} It shows the cohort pattern on which the instrument rests, in which respondents born in the 1930s and 1940s report the most antisemitic views. It therefore illustrates both the first stage and the core assumption of the design in one graph.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2356, l. 4--7)}
+\item
+  \textbf{The selection forms a complete chain.} The data (Table 6) feed the correlation (Table 7), the instrument (Figure 7 and Table 9) and finally the causal estimate (Table 10). Each element answers one step of the evaluation guide in Appendix B.1.
+\item
+  \textbf{All five elements use one data source and one script.} They are based on the ALLBUS 2016 file, which GESIS provides free of charge for academic use, and on a single do-file of the authors, which keeps the replication transparent and fully reproducible.\footnote{(GESIS 2018; German\_Social\_Survey\_2016\_dofile.do)}
+\end{itemize}
+
+\par\textbf{Results Excluded from the Replication}\par
+
+\begin{itemize}
+\item
+  \textbf{Twitter analysis (Tables 1--5):} the package contains the aggregated district-day panels (jeea\_15km.dta, jeea\_20km.dta and jeea\_25km.dta), but not the raw tweets, which may not be released under the platform's terms of use.\footnote{(README of the replication package)} The sentiment measures can therefore not be rebuilt from the source data, and the analysis is a second, separate design with about 1.25 million observations and its own instrument.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2335, l. 16--29)} Within the page limit, it is more informative to evaluate one design in depth. The panel remains available as an option for the extension.
+\item
+  \textbf{ADL survey (Tables 13--14):} the data stem from the public release of Kaplan and Small (2006) and are included in the package, but the analysis serves only as a robustness check of the ALLBUS results with an older survey (2004) and different questions.\footnote{(Binstok, Gould, and Kaplan 2024, p. 2365, l. 39--41)}
+\item
+  \textbf{Tables 8, 11 and 12:} these vary the measure of antisemitism or the instrument within the same design. They can be added at low cost once Tables 7 and 10 are reproduced, for instance as part of the extension.
+\end{itemize}
+
+\par\textbf{Replication Status and Implications}\par
+
+\begin{itemize}
+\item
+  All selected estimates were reproduced exactly from the raw ALLBUS file in R, including all seven columns of Table 7 and all eight columns of Table 10 for both outcomes.
+\item
+  Reproducing the published standard errors requires the authors' conventions: HC1 for OLS (Stata reg, robust) and HC0 for IV (ivreg2, robust).\footnote{(German\_Social\_Survey\_2016\_dofile.do, lines 108 and 266--300)}
+\item
+  The replication reveals a point the paper does not report: the robust first-stage F-statistic falls from 71.9 (column 1) to 10.5 in the main specification (column 4) and below 10 in columns 6--8.
+
+  \begin{itemize}
+  \item
+    This weakness is the natural starting point for the critical evaluation (weak-instrument bias towards OLS, unreliable inference) and for the extension, for example Anderson--Rubin confidence intervals or placebo birth-cohort windows.
+  \end{itemize}
+\end{itemize}
+
