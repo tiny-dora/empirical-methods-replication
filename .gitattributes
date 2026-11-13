@@ -1,0 +1,3 @@
+# Authors' original replication package (Stata/Python) is not our code:
+# exclude it from GitHub's language statistics so the repo shows as R.
+original_code/** linguist-vendored

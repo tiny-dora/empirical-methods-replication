@@ -2,6 +2,7 @@
 
 **Paper:** Binstok, N., Gould, E. & Kaplan, T. – *Policies or Prejudices? An Analysis of Antisemitic and Anti-Israel Views on Social Media and Social Surveys*, Journal of the European Economic Association (jvae013).
 **Replikationspaket:** [Link eintragen – den gleichen wie bei der Registrierung auf praxai.ch]
+**Unsere Replikation:** ALLBUS-Analyse (Tables 6, 7, 9, 10, Figure 7) in **R** – Start: `empirical-methods-replication.Rproj` öffnen, `code/00_run_all.R` ausführen (Details in `code/README.md`).
 
 ## Deadlines
 | Was | Wo | Fällig |
@@ -22,8 +23,8 @@
 docs/            Aufgabenstellung (Problem Set 3 & 4)
 paper/           Online Appendix, Notizen (notes.md)
 report/          Report-Template (.tex) und unser Bericht
-original_code/   Code der Autoren – UNVERÄNDERT lassen
-code/            Unser Code (nummeriert, z. B. 01_clean.do, 02_main_result.do)
+original_code/   Code der Autoren (Stata/Python) – UNVERÄNDERT lassen
+code/            Unser R-Code (00_run_all.R, 01_clean_allbus.R, 02_tables.R, 03_extension.R)
 data/public/     Kleine, öffentliche Daten (im Repo)
 data/raw/        Grosse/lizenzierte Daten – NICHT im Repo, siehe data/README.md
 data/processed/  Zwischenergebnisse
