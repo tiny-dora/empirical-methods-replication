@@ -37,6 +37,17 @@
 \renewcommand{\arraystretch}{1.25}
 
 % --- Table notes -----------------------------------------------------------
+% Compact lists of tables and figures
+\usepackage[titles]{tocloft}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftbeforelottitleskip}{1.5em}
+\setlength{\cftbeforeloftitleskip}{1.5em}
+\setlength{\cftaftertoctitleskip}{0.8em}
+\setlength{\cftafterlottitleskip}{0.8em}
+\setlength{\cftafterloftitleskip}{0.8em}
+\renewcommand{\cftlottitlefont}{\Large\bfseries}
+\renewcommand{\cftloftitlefont}{\Large\bfseries}
+
 \newcommand{\tablenotes}[1]{\par\vspace{4pt}{\footnotesize\textit{Notes:} #1\par}}
 
 \begin{document}
@@ -54,6 +65,14 @@
   \rule{\textwidth}{0.4pt}
 \end{center}
 \vspace{-1em}
+
+% ---------------- Front matter: abbreviations, tables, figures --------------
+\section*{List of Abbreviations}
+\input{sections/0_abbreviations}
+
+\listoftables
+\listoffigures
+\clearpage
 
 % ===========================================================================
 \section{Introduction}
