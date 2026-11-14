@@ -59,24 +59,48 @@
 \newcommand{\tablenotes}[1]{\par\vspace{4pt}{\footnotesize\textit{Notes:} #1\par}}
 
 \begin{document}
+% ---------------- Title page --------------------------------------------------
+\begin{titlepage}
+  \noindent
+  \includegraphics[height=1.7cm]{figures/uzh_logo.png}\hfill
+  \begin{tabular}[b]{@{}r@{}}
+    \small Department of Economics\\
+    \small Empirical Methods\\
+    \small Fall Semester 2026
+  \end{tabular}
+
+  \vspace*{3.2cm}
+  \begin{center}
+    {\large\scshape Problem Set 3 \textperiodcentered{} Replication Report}\\[1.6em]
+    \rule{\textwidth}{0.8pt}\\[1.4em]
+    {\LARGE\bfseries Replication of Binstok, Gould and Kaplan (2024)}\\[1em]
+    {\Large Policies or Prejudices? An Analysis of Antisemitic and\\[0.2em]
+            Anti-Israel Views on Social Media and Social Surveys}\\[1.2em]
+    \rule{\textwidth}{0.8pt}
+
+    \vfill
+
+    {\large\itshape Submitted by}\\[1.2em]
+    {\large
+    \begin{tabular}{c@{\hspace{4em}}c}
+      Reto Lars Meyer            & L\'eon Albert K\"astli \\
+      {\normalsize 22733620}     & {\normalsize 23720584} \\[1.2em]
+      Thivya Nanthakumar         & Jo\~ao Cardoso Neves \\
+      {\normalsize 23724578}     & {\normalsize 26734483}
+    \end{tabular}}
+
+    \vfill
+
+    \begin{tabular}{@{}r@{\hspace{1em}}l@{}}
+      Lecturer:        & Prof.\ Gregory S.\ Crawford \\
+      Institution:     & University of Zurich \\
+      Submission date: & 30 November 2026
+    \end{tabular}
+  \end{center}
+\end{titlepage}
 \pagenumbering{roman}   % front matter: i, ii, ...
-% ---------------- Title block -----------------------------------------------
-\begin{center}
-  {\small\scshape Empirical Methods \hfill Problem Set 3 \hfill Fall Semester 2026}\\[-0.4em]
-  \rule{\textwidth}{0.8pt}\\[1.2em]
-    {\Large\bfseries Replication of Binstok, Gould and Kaplan (2024):}\\[0.5em]
-  {\large Policies or Prejudices? An Analysis of Antisemitic and\\ Anti-Israel Views on Social Media and Social Surveys}\\[1.4em]
-  \begin{tabular}{c@{\hspace{1.6em}}c@{\hspace{1.6em}}c@{\hspace{1.6em}}c}
-    Reto Lars Meyer & L\'eon Albert K\"astli & Thivya Nanthakumar & Jo\~ao Cardoso Neves \\
-    {\footnotesize 22733620} & {\footnotesize 23720584} & {\footnotesize 23724578} & {\footnotesize 26734483}
-  \end{tabular}\\[1em]
-  {\small University of Zurich \textperiodcentered{} 30 November 2026}\\[-0.2em]
-  \rule{\textwidth}{0.4pt}
-\end{center}
-\vspace{-1em}
 
 % ---------------- Front matter: abbreviations, tables, figures --------------
-\clearpage
 \section*{List of Abbreviations}
 \input{sections/0_abbreviations}
 
