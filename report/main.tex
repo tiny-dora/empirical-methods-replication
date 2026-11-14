@@ -24,6 +24,9 @@
 \usepackage[font=small,labelfont=bf,skip=6pt]{caption}
 % Lists of tables and figures: entries "Table 1: ..." / "Figure 1: ...", clickable
 \usepackage[titles]{tocloft}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{1em}
 \renewcommand{\cftlottitlefont}{\Large\bfseries}
 \renewcommand{\cftloftitlefont}{\Large\bfseries}
 \setlength{\cftbeforelottitleskip}{0pt}
@@ -103,12 +106,17 @@
 \end{titlepage}
 \pagenumbering{roman}   % front matter: i, ii, ...
 
-% ---------------- Front matter: abbreviations, tables, figures --------------
+% ---------------- Front matter: contents, abbreviations, tables, figures ----
+\tableofcontents
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{List of Abbreviations}
 \section*{List of Abbreviations}
 \input{sections/0_abbreviations}
 
 \clearpage
+\phantomsection\addcontentsline{toc}{section}{List of Tables}
 \listoftables
+\phantomsection\addcontentsline{toc}{section}{List of Figures}
 \listoffigures
 \clearpage
 \pagenumbering{arabic}  % report text starts at page 1
@@ -224,6 +232,7 @@
 % ===========================================================================
 
 \nocite{allbus2016}   % data source used throughout
+\clearpage\phantomsection\addcontentsline{toc}{section}{References}
 \bibliography{references}
 
 % ===========================================================================
