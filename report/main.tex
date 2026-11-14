@@ -22,6 +22,24 @@
 \usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage[font=small,labelfont=bf,skip=6pt]{caption}
+% Lists of tables and figures: entries "Table 1: ..." / "Figure 1: ...", clickable
+\usepackage[titles]{tocloft}
+\renewcommand{\cftlottitlefont}{\Large\bfseries}
+\renewcommand{\cftloftitlefont}{\Large\bfseries}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{1em}
+\setlength{\cftbeforeloftitleskip}{2.5em}
+\setlength{\cftafterloftitleskip}{1em}
+\renewcommand{\cfttabpresnum}{Table~}
+\renewcommand{\cfttabaftersnum}{:}
+\renewcommand{\cftfigpresnum}{Figure~}
+\renewcommand{\cftfigaftersnum}{:}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabnumwidth}{4.6em}
+\setlength{\cftfignumwidth}{4.9em}
+\setlength{\cftbeforetabskip}{0.5em}
+\setlength{\cftbeforefigskip}{0.5em}
 \usepackage[hidelinks]{hyperref}
 
 \setlength{\parindent}{0pt}
@@ -37,16 +55,6 @@
 \renewcommand{\arraystretch}{1.25}
 
 % --- Table notes -----------------------------------------------------------
-% Compact lists of tables and figures
-\usepackage[titles]{tocloft}
-\setlength{\cftbeforetoctitleskip}{0pt}
-\setlength{\cftbeforelottitleskip}{1.5em}
-\setlength{\cftbeforeloftitleskip}{1.5em}
-\setlength{\cftaftertoctitleskip}{0.8em}
-\setlength{\cftafterlottitleskip}{0.8em}
-\setlength{\cftafterloftitleskip}{0.8em}
-\renewcommand{\cftlottitlefont}{\Large\bfseries}
-\renewcommand{\cftloftitlefont}{\Large\bfseries}
 
 \newcommand{\tablenotes}[1]{\par\vspace{4pt}{\footnotesize\textit{Notes:} #1\par}}
 
@@ -68,9 +76,11 @@
 \vspace{-1em}
 
 % ---------------- Front matter: abbreviations, tables, figures --------------
+\clearpage
 \section*{List of Abbreviations}
 \input{sections/0_abbreviations}
 
+\clearpage
 \listoftables
 \listoffigures
 \clearpage
@@ -104,7 +114,7 @@
 
 \begin{table}[htbp]
   \centering
-  \caption{OLS and IV estimates of the effect of antisemitic views on views about Israel}
+  \caption{OLS and IV estimates of the effect of antisemitic views on views about Israel (own table, 2026)}
   \label{tab:main}
   \resizebox{\textwidth}{!}{\input{tables/table_main.tex}}
 
@@ -113,7 +123,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \caption{``Jews have too much influence'' by birth decade}
+  \caption{``Jews have too much influence'' by birth decade (own figure, 2026, based on Binstok et al., 2024, Fig.~7)}
   \label{fig:main}
   \includegraphics[width=0.8\textwidth]{figures/figure7.pdf}
 
@@ -135,7 +145,7 @@
 % Optional table for this section:
 % \begin{table}[htbp]
 %   \centering
-%   \caption{Does the instrument shift other worldviews?}
+%   \caption{Does the instrument shift other worldviews? (own table, 2026)}
 %   \label{tab:excl}
 %   \input{tables/ext_exclusion.tex}
 %   \tablenotes{OLS of each variable on an indicator for being born 1930--1945, controlling for being born before 1960 and gender (Table~9, third panel, of the paper). Robust (HC1) standard errors. *** $p<0.01$, ** $p<0.05$, * $p<0.1$.}
@@ -155,7 +165,7 @@
 
 \begin{table}[htbp]
   \centering
-  \caption{Weak-instrument-robust inference for the IV estimates}
+  \caption{Weak-instrument-robust inference for the IV estimates (own table, 2026)}
   \label{tab:ext}
   \resizebox{\textwidth}{!}{\input{tables/ext_weakiv_unjust.tex}}
 
@@ -164,7 +174,7 @@
 
 \begin{figure}[htbp]
   \centering
-  \caption{Sensitivity of the main IV estimate to violations of the exclusion restriction}
+  \caption{Sensitivity of the main IV estimate to violations of the exclusion restriction (own figure, 2026)}
   \label{fig:ext}
   \includegraphics[width=0.9\textwidth]{figures/ext_plausexog.pdf}
 
