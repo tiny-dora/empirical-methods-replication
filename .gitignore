@@ -25,3 +25,5 @@ report/comment.cut
 report/main.pdf
 report/*.lot
 report/*.lof
+report/*.bbl
+report/*.blg

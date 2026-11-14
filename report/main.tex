@@ -40,6 +40,9 @@
 \setlength{\cftfignumwidth}{4.9em}
 \setlength{\cftbeforetabskip}{0.5em}
 \setlength{\cftbeforefigskip}{0.5em}
+% Citations: Harvard style (natbib + agsm), see references.bib
+\usepackage[round]{natbib}
+\bibliographystyle{agsm}
 \usepackage[hidelinks]{hyperref}
 
 \setlength{\parindent}{0pt}
@@ -193,7 +196,7 @@
   \label{tab:ext}
   \resizebox{\textwidth}{!}{\input{tables/ext_weakiv_unjust.tex}}
 
-  \tablenotes{Columns (1)--(8) correspond to Table~10 of the paper (outcome: Israel is unjust to take Palestinian land). First stage and reduced form: coefficient on the indicator for being born 1930--1945, same sample and controls as the 2SLS regression; HC0 standard errors. The tF critical value and confidence interval follow Lee, McCrary, Moreira and Porter (2022). The Anderson--Rubin (AR) confidence set is heteroskedasticity-robust and valid regardless of the strength of the instrument.}
+  \tablenotes{Columns (1)--(8) correspond to Table~10 of the paper (outcome: Israel is unjust to take Palestinian land). First stage and reduced form: coefficient on the indicator for being born 1930--1945, same sample and controls as the 2SLS regression; HC0 standard errors. The tF critical value and confidence interval follow \citet{lee2022}. The Anderson--Rubin (AR) confidence set \citep{anderson1949} is heteroskedasticity-robust and valid regardless of the strength of the instrument.}
 \end{table}
 
 \begin{figure}[htbp]
@@ -202,7 +205,7 @@
   \label{fig:ext}
   \includegraphics[width=0.9\textwidth]{figures/ext_plausexog.pdf}
 
-  \tablenotes{Table~10, column 4. For each assumed direct effect $\delta$ of being born 1930--1945 on the outcome, the figure shows the implied 2SLS estimate $\beta(\delta) = (\text{reduced form} - \delta)/\text{first stage}$ with its conventional and Anderson--Rubin 95\% confidence intervals (Conley, Hansen and Rossi 2012). The dashed horizontal line is the comparable OLS estimate (Table~7, column 3).}
+  \tablenotes{Table~10, column 4. For each assumed direct effect $\delta$ of being born 1930--1945 on the outcome, the figure shows the implied 2SLS estimate $\beta(\delta) = (\text{reduced form} - \delta)/\text{first stage}$ with its conventional and Anderson--Rubin 95\% confidence intervals \citep{conley2012}. The dashed horizontal line is the comparable OLS estimate (Table~7, column 3).}
 \end{figure}
 
 % Alternative figure (all Table 10 columns, three types of CIs):
@@ -219,22 +222,11 @@
 \input{sections/6_conclusion}
 
 % ===========================================================================
-\begin{thebibliography}{9}
+% References (only works that are cited in the text appear here)
 % ===========================================================================
-\bibitem{paper} Binstok, N., Gould, E.~D., \& Kaplan, T. (2024). Policies or prejudices? An analysis of antisemitic and anti-Israel views on social media and social surveys. \textit{Journal of the European Economic Association} 22(5), 2329--2373. \url{https://doi.org/10.1093/jeea/jvae013}
 
-\bibitem{allbus} GESIS -- Leibniz-Institut f\"ur Sozialwissenschaften (2018). German General Social Survey -- ALLBUS 2016. GESIS Data Archive, Cologne. ZA5252 Data file Version 1.0.0. \url{https://doi.org/10.4232/1.12837}
-
-\bibitem{vv} Voigtl\"ander, N., \& Voth, H.-J. (2015). Nazi indoctrination and anti-Semitic beliefs in Germany. \textit{Proceedings of the National Academy of Sciences} 112(26), 7931--7936.
-
-\bibitem{lmmp} Lee, D.~S., McCrary, J., Moreira, M.~J., \& Porter, J. (2022). Valid t-ratio inference for IV. \textit{American Economic Review} 112(10), 3260--3290.
-
-\bibitem{ar} Anderson, T.~W., \& Rubin, H. (1949). Estimation of the parameters of a single equation in a complete system of stochastic equations. \textit{Annals of Mathematical Statistics} 20(1), 46--63.
-
-\bibitem{chr} Conley, T.~G., Hansen, C.~B., \& Rossi, P.~E. (2012). Plausibly exogenous. \textit{Review of Economics and Statistics} 94(1), 260--272.
-
-\bibitem{oster} Oster, E. (2019). Unobservable selection and coefficient stability: Theory and evidence. \textit{Journal of Business \& Economic Statistics} 37(2), 187--204.
-\end{thebibliography}
+\nocite{allbus2016}   % data source used throughout
+\bibliography{references}
 
 % ===========================================================================
 \clearpage
