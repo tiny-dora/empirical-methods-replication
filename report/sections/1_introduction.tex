@@ -11,11 +11,27 @@ Empirical evidence on the link between antisemitism and views on Israel is limit
 
 \subsection*{Research Question}
 
-The central research question is therefore whether antisemitic beliefs cause more negative views about Israel \citep[p.~2332]{binstok2024}. With their methods, the authors aim to identify a systematic link between antisemitism and strong criticism of Israel, but they explicitly do not try to identify the motives of individual persons \citep[p.~2332]{binstok2024}. They also place their question in the broader literature on how biases shape views on public policy, which has so far only touched on this link \citep[pp.~2330, 2370--2371]{binstok2024}.
+The central research question is therefore whether antisemitic beliefs cause more negative views about Israel \citep[pp.~2331--2332]{binstok2024}. With their methods, the authors aim to identify a systematic link between antisemitism and strong criticism of Israel, but they explicitly do not try to identify the motives of individual persons \citep[p.~2332]{binstok2024}. In this way, the paper contributes causal evidence to a literature on biases and political views that so far mainly documents correlations \citep[pp.~2330--2331]{binstok2024}.
+
+\subsection*{Empirical Approach and Main Findings}
+
+To answer this question, the authors use two independent data sources, each with its own instrumental variable (IV). The first source is Twitter data from the United Kingdom between 2013 and 2022, a panel of 355 districts observed over 3,531 days. For each district and day, they count the negative tweets about Jews and about Israel and compare them.
+The authors estimate this relationship with ordinary least squares (OLS) and IV, including district and time fixed effects. As an instrument, they use online chatter about Tottenham Hotspur, a football club that is widely perceived as a ``Jewish'' team but has no connection to Israel \citep[pp.~2333, 2335--2337]{binstok2024}.
+
+The second source, on which this report focuses, is the German General Social Survey (ALLBUS), a cross-section of individuals from 2016.
+Respondents rate two statements on a scale from 1 (completely disagree) to 7 (completely agree): ``Jews have too much influence in the world'', which measures antisemitism, and ``It is unjust that Israel is taking away land from the Palestinians'', which measures criticism of Israel. The authors test whether people who agree more with the first statement also agree more with the second.
+
+The authors again use OLS and IV. The instrument is being born between 1930 and 1945, i.e.\ exposure to Nazi indoctrination during childhood, following the idea of \citet{voigtlaender2015}, compared with respondents born between 1946 and 1960 \citep[pp.~2345--2346, 2355--2358]{binstok2024}. As a robustness check, they use a 2004 survey of the Anti-Defamation League (ADL) covering ten European countries, again with birth cohorts as instruments \citep[pp.~2365--2366]{binstok2024}.
+
+In both analyses, the IV estimates are considerably larger than the OLS estimates: 
+On Twitter, the OLS coefficient is 0.30 and the IV coefficient 0.75; in the ALLBUS data, the OLS coefficient is about 0.16, while the main IV estimate is 0.85 \citep[pp.~2338, 2340, 2353, 2359]{binstok2024}. The authors explain this gap with under-reporting: respondents conceal their antisemitic views in surveys but express them through their views on Israel \citep[p.~2364]{binstok2024}. At the same time, they stress that about half of the respondents with the most critical views of Israel show no sign of antisemitism \citep[p.~2351]{binstok2024}.
 
 \subsection*{Our Replication and Extension}
 
-% TODO: our replication (exact), critique (weak instrument, F about 10.5), extension (tF / Anderson-Rubin, plausibly exogenous), our conclusion in one sentence
+Our replication focuses on the ALLBUS analysis. We reproduce the means of all survey statements in Table~6 (column~1), the OLS results in Table~7, the first stage and the reduced form in Table~9 (third panel), the IV results in Table~10 and Figure~7 of the paper; the reasons for this selection are set out in Section~\ref{sec:replication}. All numbers match the published results exactly.
+
+While replicating, we noticed that the first stage is weak: in the main specification, the $F$-statistic is only 10.5, which the paper does not report. Such a low $F$-statistic means that the instrument has only a small effect on antisemitic views, so that the IV estimate can be biased. According to the rule of thumb of \citet{lee2022}, the $F$-statistic should exceed about 104.7 for the usual critical value of $\pm 1.96$ to be valid. In our extension, we therefore use the tF procedure, which remains valid even when the instrument is weak. With tF, the main estimate is no longer significant at the 5\% level ($p = 0.14$). The Anderson--Rubin confidence interval \citep{anderson1949}, which is also robust to weak instruments, still excludes zero, but it is very wide (0.33 to 2.18). Moreover, a direct effect of the birth cohort on views about Israel of only 0.13 points on the 1--7 scale would be enough to make the estimate insignificant \citep{conley2012}.
+
 
 
 % ---------------------------------------------------------------------------
