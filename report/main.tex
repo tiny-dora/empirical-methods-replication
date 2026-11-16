@@ -145,23 +145,23 @@
 \subsection{Replication}\label{sec:replication}
 \input{sections/3_1_replication}
 
-\begin{table}[htbp]
-  \centering
-  \caption{OLS and IV estimates of the effect of antisemitic views on views about Israel (own table, 2026)}
-  \label{tab:main}
-  \resizebox{\textwidth}{!}{\input{tables/table_main.tex}}
+%\begin{table}[htbp]
+ % \centering
+  %\caption{OLS and IV estimates of the effect of antisemitic views on views about Israel (own table, 2026)}
+  %\label{tab:main}
+  %\resizebox{\textwidth}{!}%{\input{tables/table_main.tex}}
 
-  \tablenotes{Outcome: agreement (1--7) that it is unjust that Israel is taking land from the Palestinians. Variable of interest: agreement (1--7) that Jews have too much influence in the world. ALLBUS 2016, respondents born in Germany 1930--1990 who are Christian or have no religion. Columns OLS (1) and (2) correspond to Table~7, columns 1 and 7 of the paper; IV (3)--(6) to Table~10, columns 1, 2, 4 and 8. In the IV columns the instrument is an indicator for being born 1930--1945. Robust standard errors in parentheses (HC1 for OLS, HC0 for IV, as in the authors' Stata code). Rows in italics show the published values. First-stage $F$: heteroskedasticity-robust. *** $p<0.01$, ** $p<0.05$, * $p<0.1$.}
-\end{table}
+  %\tablenotes{Outcome: agreement (1--7) that it is unjust that Israel is taking land from the Palestinians. Variable of interest: agreement (1--7) that Jews have too much influence in the world. ALLBUS 2016, respondents born in Germany 1930--1990 who are Christian or have no religion. Columns OLS (1) and (2) correspond to Table~7, columns 1 and 7 of the paper; IV (3)--(6) to Table~10, columns 1, 2, 4 and 8. In the IV columns the instrument is an indicator for being born 1930--1945. Robust standard errors in parentheses (HC1 for OLS, HC0 for IV, as in the authors' Stata code). Rows in italics show the published values. First-stage $F$: heteroskedasticity-robust. *** $p<0.01$, ** $p<0.05$, * $p<0.1$.}
+%\end{table}
 
-\begin{figure}[htbp]
-  \centering
-  \caption{``Jews have too much influence'' by birth decade (own figure, 2026, based on Binstok et al., 2024, Fig.~7)}
-  \label{fig:main}
-  \includegraphics[width=0.8\textwidth]{figures/figure7.pdf}
+%\begin{figure}[htbp]
+ % \centering
+ % \caption{``Jews have too much influence'' by birth decade (own figure, 2026, based on Binstok et al., 2024, Fig.~7)}
+  %\label{fig:main}
+  %\includegraphics[width=0.8\textwidth]{figures/figure7.pdf}
 
-  \tablenotes{Replication of Figure~7 of the paper. Mean agreement (1--7) with the statement that Jews have too much influence in the world, by decade of birth. ALLBUS 2016, respondents born in Germany 1930--1989 who are Christian or have no religion.}
-\end{figure}
+  %\tablenotes{Replication of Figure~7 of the paper. Mean agreement (1--7) with the statement that Jews have too much influence in the world, by decade of birth. ALLBUS 2016, respondents born in Germany 1930--1989 who are Christian or have no religion.}
+%\end{figure}
 
 \subsection{Interpretation}
 
@@ -196,23 +196,23 @@
 
 \input{sections/5_1_extension}
 
-\begin{table}[htbp]
-  \centering
-  \caption{Weak-instrument-robust inference for the IV estimates (own table, 2026)}
-  \label{tab:ext}
-  \resizebox{\textwidth}{!}{\input{tables/ext_weakiv_unjust.tex}}
+%\begin{table}[htbp]
+ % \centering
+  %\caption{Weak-instrument-robust inference for the IV estimates (own table, 2026)}
+ % \label{tab:ext}
+%  \resizebox{\textwidth}{!}%{\input{tables/ext_weakiv_unjust.tex}}
 
-  \tablenotes{Columns (1)--(8) correspond to Table~10 of the paper (outcome: Israel is unjust to take Palestinian land). First stage and reduced form: coefficient on the indicator for being born 1930--1945, same sample and controls as the 2SLS regression; HC0 standard errors. The tF critical value and confidence interval follow \citet{lee2022}. The Anderson--Rubin (AR) confidence set \citep{anderson1949} is heteroskedasticity-robust and valid regardless of the strength of the instrument.}
-\end{table}
+ % \tablenotes{Columns (1)--(8) correspond to Table~10 of the paper (outcome: Israel is unjust to take Palestinian land). First stage and reduced form: coefficient on the indicator for being born 1930--1945, same sample and controls as the 2SLS regression; HC0 standard errors. The tF critical value and confidence interval follow \citet{lee2022}. The Anderson--Rubin (AR) confidence set \citep{anderson1949} is heteroskedasticity-robust and valid regardless of the strength of the instrument.}
+%\end{table}
 
-\begin{figure}[htbp]
-  \centering
-  \caption{Sensitivity of the main IV estimate to violations of the exclusion restriction (own figure, 2026)}
-  \label{fig:ext}
-  \includegraphics[width=0.9\textwidth]{figures/ext_plausexog.pdf}
+%\begin{figure}[htbp]
+ % \centering
+ % \caption{Sensitivity of the main IV estimate to violations of the exclusion restriction (own figure, 2026)}
+%  \label{fig:ext}
+ % \includegraphics[width=0.9\textwidth]{figures/ext_plausexog.pdf}
 
-  \tablenotes{Table~10, column 4. For each assumed direct effect $\delta$ of being born 1930--1945 on the outcome, the figure shows the implied 2SLS estimate $\beta(\delta) = (\text{reduced form} - \delta)/\text{first stage}$ with its conventional and Anderson--Rubin 95\% confidence intervals \citep{conley2012}. The dashed horizontal line is the comparable OLS estimate (Table~7, column 3).}
-\end{figure}
+ % \tablenotes{Table~10, column 4. For each assumed direct effect $\delta$ of being born 1930--1945 on the outcome, the figure shows the implied 2SLS estimate $\beta(\delta) = (\text{reduced form} - \delta)/\text{first stage}$ with its conventional and Anderson--Rubin 95\% confidence intervals \citep{conley2012}. The dashed horizontal line is the comparable OLS estimate (Table~7, column 3).}
+%\end{figure}
 
 % Alternative figure (all Table 10 columns, three types of CIs):
 % \includegraphics[width=0.9\textwidth]{figures/ext_weakiv.pdf}
@@ -231,8 +231,8 @@
 % References (only works that are cited in the text appear here)
 % ===========================================================================
 
-\nocite{allbus2016}   % data source used throughout
-\clearpage\phantomsection\addcontentsline{toc}{section}{References}
+%\nocite{allbus2016}   % data source used throughout
+%\clearpage\phantomsection\addcontentsline{toc}{section}{References}
 \bibliography{references}
 
 % ===========================================================================
@@ -249,7 +249,7 @@
 Field & Your entry \\
 \midrule
 Paper & Binstok, Gould \& Kaplan (2024), ``Policies or Prejudices? An Analysis of Antisemitic and Anti-Israel Views on Social Media and Social Surveys,'' \textit{JEEA} 22(5), 2329--2373. doi:10.1093/jeea/jvae013 \\
-Replication package & [Link zum Replikationspaket eintragen -- derselbe wie bei praxai.ch] \\
+Replication package & [...] \\
 Additional data sources & ALLBUS 2016, GESIS ZA5252 v1.0.0, doi:10.4232/1.12837 [Zugriffsdatum eintragen] \\
 Outcome ($Y$) & Agreement 1--7: ``It is unjust that Israel is taking away land from the Palestinians'' (mj06) \\
 Treatment or variable of interest ($X$) & Agreement 1--7: ``Jews have too much influence in the world'' (mj01) \\
@@ -259,7 +259,7 @@ Comparison & Respondents born 1930--1945 (Nazi-era childhood) vs.\ 1946--1960, h
 Main method & OLS with stepwise controls; IV-2SLS (instrument: born 1930--1945) \\
 Result replicated & Table 6 (col.\ 1), Table 7 (cols.\ 1--7), Table 9 (third panel, first stage and reduced form), Table 10 (cols.\ 1--8, both outcomes), Figure 7 \\
 Software and version & R [Version eintragen, z.\,B.\ R 4.4]; packages haven, sandwich, ivreg, ggplot2 \\
-Code & \url{https://github.com/tiny-dora/empirical-methods-replication} (folder \texttt{code/}) \\
+Code & \url{...} (folder \texttt{code/}) \\
 \bottomrule
 \end{tabularx}}
 
